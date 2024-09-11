@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <meta charset="utf-8" />
+  <script
+    src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.1/camera_utils.js"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.2/drawing_utils.js"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.1/hands.js"
+    crossorigin="anonymous"
+  ></script>
+ </head>
+
+ <body>
+  <button id="infoButton">i</button>
+
+  <div class="scoreTimer">
+    <div>Čas <div id="timerDisplay">0</div></div>
+    <div>Rezultat <div id="scoreDisplay">0</div></div>
+    <div>Najvišji rezultat <div id="highScoreDisplay">0</div></div>
+  </div>
+  
+  
+  
+  <div id="popup" style="display: none;">
+    <h2>Dobrodošli v Binarnem svetu prstov! 🌟</h2>
+    <p><b>Kaj je binarni sistem?</b></p>
+    <p>Binarni sistem je način štetja samo z dvema številkama - 0 in 1. Tako kot pri običajnem štetju, kjer uporabljamo številke od 0 do 9.</p><br>
+
+    
+
+    <p><b>Kako uporabljati prste za binarno štetje?</b></p>
+
+    <p>Vsak prst je vreden določeno število. Ko je prst dvignjen, to pomeni '1', ko je spuščen, to pomeni '0'.</p>
+    <p>Začnite z mezincem kot '1', prstancem kot '2', sredincem kot '4', kazalcem kot '8' in palcem kot '16'.</p><br>
+
+    <p><b>Kako deluje naša igra?</b></p>
+    <p>V naši igri boste uporabljali prste, da se naučite binarnih števil in kako jih seštevati. Vsaka stopnja traja 60 sekund!</p>
+
+    <p>👉 1. Stopnja: Tukaj se vse pokaže! Na vsakem prstu bo številka, ki pove, koliko je vreden v binarnem sistemu. Zgoraj bodo tudi binarne številke, ki jih ustvarjate.</p>
+
+    <p>👉 2. Stopnja: Malo težje! Na prstih ni več številk. Morate se spomniti, koliko je vsak prst vreden.</p>
+
+    <p>👉 3. Stopnja: Pravi izziv! Ne prikazujejo se niti binarne številke zgoraj. Vse morate izračunati v glavi.</p><br>
+    
+    <p><b>Primer:</b></p>
+    <p>✋ Dvignite mezinec in prstanec. To pomeni 1 (mezinec) + 2 (prstanec) = 3 v binarnem sistemu!</p>
+
+    <p>Zdaj ste pripravljeni! Pridružite se zabavi in postanite mojster binarnega štetja z vašimi prsti! 🎉</p>
+    <button id="closeButton">Zapri</button>
+  </div>
+
+  <div id="popup1" style="display: none;">
+    <h2>Čestitamo! 🎉</h2>
+    <p>Uspešno ste zaključili <a id="levelScore"">1 </a>. stopnjo! 🌟</p>
+    <p>Rezultat: <a id="scoreDisplay1">0</a></p>
+    <p>Najvišji rezultat: <a id="highScoreDisplay1">0</a></p>
+    <button id="closeButton1">Zapri</button>
+  </div>
+
+
+  <div class="container">
+    <div id="fingerBoxes"> 
+      <div id="leftThumb">0</div>
+      <div id="leftIndex">0</div>
+      <div id="leftMiddle">0</div>
+      <div id="leftRing">0</div>
+      <div id="leftPinky">0</div>
+
+      <div id="rightThumb">0</div>
+      <div id="rightIndex">0</div>
+      <div id="rightMiddle">0</div>
+      <div id="rightRing">0</div>
+      <div id="rightPinky">0</div>
+    </div>
+    <video class="input_video"> </video>
+    <canvas class="output" id="outputCanvas" width="700px" height="520px"></canvas>
+    <div class="sumTarget">
+      <div>Tarča <br> <a id="targetDisplay">0</a></div>
+      <div class="sum">Vsota <br> <a id="sum">0</a></div>
+    </div>
+    
+  </div>
+
+  <div id="levels">
+    <button id="level1">1. Stopnja</button>
+    <button id="level2">2. Stopnja</button>
+    <button id="level3">3. Stopnja</button>
+  </div>
+
+  <script type="text/javascript" src="./main.js"></script>
+
+ </body>
+</html>
